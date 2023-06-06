@@ -16,6 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: $container-color;
 
     &__menu {
       @media screen and (max-width: 767px) {
@@ -54,9 +55,7 @@
     }
   }
   
-  //======== SHOW MENU ==========//
-
   .show-menu {
-    top: calc($header-height+ 1rem);
+    top: 4rem;
   }
 
