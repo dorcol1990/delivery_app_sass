@@ -41,7 +41,7 @@ img {
 .section {
   padding: 4.5rem 0 1rem;
 }
-.section_title, .section_title-center {
+.section__title, .section__title-center {
   font-size: 1.25rem;
   color: hsl(45, 4%, 15%);
   text-align: center;
@@ -157,6 +157,15 @@ img {
 .button:hover {
   background-color: transparent;
 }
+.button-flex {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+.button__icon {
+  font-size: 1.5rem;
+}
 
 .about__container {
   gap: 2.5rem;
@@ -188,4 +197,41 @@ img {
   width: 135px;
   justify-self: center;
   margin-bottom: 0.5rem;
-}/*# sourceMappingURL=main.css.map */
+}
+
+.app__container {
+  gap: 2.5rem;
+}
+.app__data {
+  text-align: center;
+}
+.app__description {
+  margin-bottom: 1.5rem;
+}
+.app__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.contact__container {
+  margin-bottom: 3rem;
+}
+.contact__description {
+  text-align: center;
+}
+.contact__content {
+  row-gap: 0.75rem;
+}
+.contact__address {
+  font-size: 0.813rem;
+  font-weight: 600;
+  color: hsl(45, 4%, 15%);
+}
+.contact__information {
+  font-weight: initial;
+  color: hsl(45, 4%, 35%);
+}
+
+/*# sourceMappingURL=main.css.map */
