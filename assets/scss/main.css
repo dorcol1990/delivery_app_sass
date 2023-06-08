@@ -122,6 +122,20 @@ img {
   top: 4rem;
 }
 
+.active__link {
+  position: relative;
+}
+.active__link::before {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  left: 45%;
+  width: 5px;
+  height: 5px;
+  background-color: hsl(45, 4%, 15%);
+  border-radius: 50%;
+}
+
 .home__container {
   row-gap: 3rem;
 }
@@ -232,6 +246,41 @@ img {
 .contact__information {
   font-weight: initial;
   color: hsl(45, 4%, 35%);
+}
+
+.footer {
+  background-color: hsl(45, 98%, 80%);
+  padding-bottom: 2rem;
+}
+.footer__container {
+  row-gap: 2rem;
+}
+.footer__logo, .footer__title {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+.footer__logo {
+  display: inline-block;
+  font-weight: 600;
+  color: hsl(45, 4%, 15%);
+}
+.footer__description, .footer__link {
+  font-size: 0.813rem;
+}
+.footer__links {
+  display: grid;
+  row-gap: 0.5rem;
+}
+.footer__link {
+  color: hsl(45, 4%, 15%);
+}
+.footer__social {
+  display: flex;
+  column-gap: 1.5rem;
+}
+.footer__social-link {
+  font-size: 1.25rem;
+  color: hsl(45, 4%, 15%);
 }
 
 /*# sourceMappingURL=main.css.map */
