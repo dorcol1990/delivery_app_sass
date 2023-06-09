@@ -17,6 +17,7 @@ body {
   font-size: 0.938rem;
   background-color: hsl(45, 0%, 100%);
   color: hsl(45, 4%, 35%);
+  transition: 0.5s;
 }
 
 h1, h2, h3 {
@@ -36,6 +37,19 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.change-theme {
+  position: absolute;
+  right: 1.5rem;
+  top: 2.2rem;
+  color: hsl(45, 4%, 15%);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.dark-theme .footer {
+  background-color: #fff;
 }
 
 .section {
@@ -134,6 +148,10 @@ img {
   height: 5px;
   background-color: hsl(45, 4%, 15%);
   border-radius: 50%;
+}
+
+.scroll-header {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .home__container {
@@ -281,6 +299,170 @@ img {
 .footer__social-link {
   font-size: 1.25rem;
   color: hsl(45, 4%, 15%);
+}
+
+.scrollup {
+  position: fixed;
+  background-color: hsl(45, 98%, 60%);
+  right: 1rem;
+  bottom: -20%;
+  display: inline-flex;
+  padding: 0.3rem;
+  border-radius: 0.25rem;
+  z-index: 10;
+  opacity: 0.8;
+  transition: 0.5s;
+}
+.scrollup:hover {
+  background-color: hsl(45, 98%, 60%);
+  opacity: 1;
+}
+.scrollup__icon {
+  font-size: 1.25rem;
+  color: hsl(45, 4%, 15%);
+}
+
+.show-scroll {
+  bottom: 3rem;
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsl(45, 4%, 85%);
+}
+::-webkit-scrollbar-thumb {
+  background-color: hsl(45, 4%, 75%);
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(45, 4%, 65%);
+}
+
+@media screen and (max-width: 360px) {
+  .svg__img {
+    width: 100%;
+  }
+  .section {
+    padding: 3.5rem 0 1rem;
+  }
+  .services__img {
+    width: 100px;
+  }
+  .app__buttons {
+    grid-template-columns: max-content;
+  }
+}
+@media screen and (min-width: 576px) {
+  .svg__img {
+    width: 100%;
+  }
+  .section__title-center {
+    text-align: initial;
+  }
+  .home__container,
+  .about__container,
+  .security__container,
+  .services__container,
+  .app__container,
+  .contact__container,
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home__img {
+    order: 1;
+  }
+  .home__container,
+  .about__container,
+  .security__container,
+  .app__container,
+  .contact__container {
+    align-items: center;
+  }
+  .about__data,
+  .security__data,
+  .app__data,
+  .contact__description {
+    text-align: initial;
+  }
+  .about__img,
+  .app__img {
+    order: -1;
+  }
+}
+@media screen and (min-width: 767px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding: 6rem 0 2rem;
+  }
+  .nav {
+    height: 4.5rem;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 2.5rem;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .change-theme {
+    position: initial;
+  }
+  .home__container {
+    padding: 6rem 0 2rem;
+  }
+  .app__buttons {
+    justify-content: initial;
+  }
+}
+@media screen and (min-width: 968px) {
+  .button__header {
+    display: block;
+  }
+  .svg__img {
+    width: 470px;
+  }
+  .about__container,
+  .security__container,
+  .app__container,
+  .contact__container {
+    column-gap: 6rem;
+  }
+  .services__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contact__container {
+    grid-template-columns: 3fr 1.5fr 1.25fr;
+  }
+  .footer__container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .footer__social {
+    align-items: flex-start;
+  }
+  .footer__social-link {
+    font-size: 1.45rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home__img {
+    width: 540px;
+  }
+  .home__description {
+    padding-right: 5rem;
+  }
+  .footer__container {
+    column-gap: 3rem;
+  }
+  .scrollup {
+    right: 2rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
