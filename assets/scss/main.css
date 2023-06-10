@@ -1,10 +1,58 @@
 /*==========GOOGLE FONTS=========*/
-@import url("https://fonts.googleapis.com/css2?family=Changa+One&family=Montserrat&family=Poppins:wght@400;600;700&display=swap");
-/*==============VARIABLES=============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3rem;
+  /*========== Colors ==========*/
+  --hue: 45;
+  --sat: 98%;
+  --first-color: hsl(var(--hue), var(--sat), 60%);
+  --first-color-light: hsl(var(--hue), var(--sat), 85%);
+  --first-color-lighten: hsl(var(--hue), var(--sat), 80%);
+  --first-color-alt: hsl(var(--hue), var(--sat), 53%);
+  --title-color: hsl(var(--hue), 4%, 15%);
+  --text-color: hsl(var(--hue), 4%, 35%);
+  --text-color-light: hsl(var(--hue), 4%, 65%);
+  --body-color: hsl(var(--hue), 0%, 100%);
+  --container-color: #FFF;
+  --scroll-bar-color: hsl(var(--hue), 4%, 85%);
+  --scroll-thumb-color: hsl(var(--hue), 4%, 75%);
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  /*========== Font weight ==========*/
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  /*========== Margenes ==========*/
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+@media screen and (min-width: 968px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
 *, ::before, ::after {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 html {
@@ -12,17 +60,17 @@ html {
 }
 
 body {
-  margin-top: 3rem;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.938rem;
-  background-color: hsl(45, 0%, 100%);
-  color: hsl(45, 4%, 35%);
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
   transition: 0.5s;
 }
 
 h1, h2, h3 {
-  font-weight: 600;
-  color: hsl(45, 4%, 15%);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
   line-height: 1.5;
 }
 
@@ -39,44 +87,56 @@ img {
   height: auto;
 }
 
+body.dark-theme {
+  --first-color-light: hsl(var(--hue), var(--sat), 75%);
+  --title-color: hsl(var(--hue), 4%, 95%);
+  --text-color: hsl(var(--hue), 4%, 80%);
+  --body-color: hsl(var(--hue), 8%, 13%);
+  --container-color: hsl(var(--hue), 8%, 16%);
+  --scroll-bar-color: hsl(var(--hue), 4%, 32%);
+  --scroll-thumb-color: hsl(var(--hue), 4%, 24%);
+}
+
+/*========== Button Dark/Light ==========*/
 .change-theme {
   position: absolute;
   right: 1.5rem;
   top: 2.2rem;
-  color: hsl(45, 4%, 15%);
+  color: var(--title-color);
   font-size: 1.8rem;
   cursor: pointer;
 }
 
 .dark-theme .footer {
-  background-color: #fff;
+  background-color: var(--container-color);
 }
 
 .section {
   padding: 4.5rem 0 1rem;
 }
 .section__title, .section__title-center {
-  font-size: 1.25rem;
-  color: hsl(45, 4%, 15%);
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--mb-1);
 }
 
 .svg__color {
-  fill: hsl(45, 98%, 60%);
+  fill: var(--first-color);
 }
 .svg__blob {
-  fill: hsl(45, 98%, 85%);
+  fill: var(--first-color-light);
 }
 .svg__img {
   width: 300px;
   justify-self: center;
 }
 
+/*=============== LAYOUT ===============*/
 .container {
   max-width: 968px;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
 }
 
 .grid {
@@ -86,25 +146,25 @@ img {
 
 .header {
   width: 100%;
-  border-color: hsl(45, 0%, 100%);
+  background-color: var(--body-color);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: var(--z-fixed);
   transition: 0.5s;
 }
 
+/*=============== NAV ===============*/
 .nav {
-  height: 3rem;
+  height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
 }
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
-    background-color: #fff;
+    background-color: var(--container-color);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
     padding: 2.5rem 0;
     width: 90%;
@@ -114,7 +174,7 @@ img {
     margin: 0 auto;
     transition: 0.4s;
     border-radius: 2rem;
-    z-index: 100;
+    z-index: var(--z-fixed);
   }
 }
 .nav__list {
@@ -124,32 +184,35 @@ img {
   row-gap: 1.5rem;
 }
 .nav__link, .nav__logo, .nav__toggle {
-  color: hsl(45, 4%, 15%);
-  font-weight: 600;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
 }
 .nav__toggle {
   font-size: 1.3rem;
   cursor: pointer;
 }
 
+/* Show menu */
 .show-menu {
-  top: 4rem;
+  top: calc(var(--header-height) + 1rem);
 }
 
-.active__link {
+/* Active link */
+.active-link {
   position: relative;
 }
-.active__link::before {
+.active-link::before {
   content: "";
   position: absolute;
   bottom: -0.75rem;
   left: 45%;
   width: 5px;
   height: 5px;
-  background-color: hsl(45, 4%, 15%);
+  background-color: var(--title-color);
   border-radius: 50%;
 }
 
+/* Change background header */
 .scroll-header {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
@@ -158,25 +221,25 @@ img {
   row-gap: 3rem;
 }
 .home__title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--mb-0-75);
 }
 .home__description {
-  margin-bottom: 2rem;
+  margin-bottom: var(--mb-2);
 }
 
 .button {
   display: inline-block;
-  background-color: hsl(45, 98%, 60%);
-  color: #1a1a1a;
+  background-color: var(--first-color);
+  color: #1A1A1A;
   padding: 0.75rem 1.5rem;
   border-radius: 3rem;
-  font-weight: 600;
+  font-weight: var(--font-semi-bold);
   transition: 0.3s;
 }
 .button:hover {
-  background-color: hsl(45, 98%, 53%);
+  background-color: var(--first-color-alt);
 }
 .button__header {
   display: none;
@@ -184,9 +247,9 @@ img {
 .button-link {
   background: none;
   padding: 0;
-  color: hsl(45, 4%, 15%);
+  color: var(--title-color);
 }
-.button:hover {
+.button-link:hover {
   background-color: transparent;
 }
 .button-flex {
@@ -219,8 +282,8 @@ img {
 .services__data {
   display: grid;
   row-gap: 1rem;
-  background-color: #fff;
-  box-shadow: 0 2px 6px hsla(45, 100%, 15%, 0.15);
+  background-color: var(--container-color);
+  box-shadow: 0px 2px 6px hsla(var(--hue), 100%, 15%, 0.15);
   padding: 2rem 1.5rem;
   border-radius: 1rem;
   text-align: center;
@@ -228,7 +291,7 @@ img {
 .services__img {
   width: 135px;
   justify-self: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--mb-0-5);
 }
 
 .app__container {
@@ -238,7 +301,7 @@ img {
   text-align: center;
 }
 .app__description {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--mb-1-5);
 }
 .app__buttons {
   display: grid;
@@ -248,7 +311,7 @@ img {
 }
 
 .contact__container {
-  margin-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 .contact__description {
   text-align: center;
@@ -257,40 +320,40 @@ img {
   row-gap: 0.75rem;
 }
 .contact__address {
-  font-size: 0.813rem;
-  font-weight: 600;
-  color: hsl(45, 4%, 15%);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
 }
 .contact__information {
   font-weight: initial;
-  color: hsl(45, 4%, 35%);
+  color: var(--text-color);
 }
 
 .footer {
-  background-color: hsl(45, 98%, 80%);
+  background-color: var(--first-color-lighten);
   padding-bottom: 2rem;
 }
 .footer__container {
   row-gap: 2rem;
 }
 .footer__logo, .footer__title {
-  font-size: 1.125rem;
-  margin-bottom: 0.75rem;
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-75);
 }
 .footer__logo {
   display: inline-block;
-  font-weight: 600;
-  color: hsl(45, 4%, 15%);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
 }
 .footer__description, .footer__link {
-  font-size: 0.813rem;
+  font-size: var(--small-font-size);
 }
 .footer__links {
   display: grid;
   row-gap: 0.5rem;
 }
 .footer__link {
-  color: hsl(45, 4%, 15%);
+  color: var(--title-color);
 }
 .footer__social {
   display: flex;
@@ -298,47 +361,56 @@ img {
 }
 .footer__social-link {
   font-size: 1.25rem;
-  color: hsl(45, 4%, 15%);
+  color: var(--title-color);
+}
+.footer__copy {
+  margin-top: 6rem;
+  text-align: center;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color);
 }
 
 .scrollup {
   position: fixed;
-  background-color: hsl(45, 98%, 60%);
+  background: var(--first-color);
   right: 1rem;
   bottom: -20%;
   display: inline-flex;
   padding: 0.3rem;
   border-radius: 0.25rem;
-  z-index: 10;
+  z-index: var(--z-tooltip);
   opacity: 0.8;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .scrollup:hover {
-  background-color: hsl(45, 98%, 60%);
+  background-color: var(--first-color);
   opacity: 1;
 }
 .scrollup__icon {
   font-size: 1.25rem;
-  color: hsl(45, 4%, 15%);
+  color: var(--title-color);
 }
 
+/* Show Scroll Up*/
 .show-scroll {
   bottom: 3rem;
 }
 
+/*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
   width: 0.6rem;
   border-radius: 0.5rem;
-  background-color: hsl(45, 4%, 85%);
+  background-color: var(--scroll-bar-color);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: hsl(45, 4%, 75%);
+  background-color: var(--scroll-thumb-color);
   border-radius: 0.5rem;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(45, 4%, 65%);
+  background-color: var(--text-color-light);
 }
 
+/* For small devices */
 @media screen and (max-width: 360px) {
   .svg__img {
     width: 100%;
@@ -353,6 +425,7 @@ img {
     grid-template-columns: max-content;
   }
 }
+/* For medium devices */
 @media screen and (min-width: 576px) {
   .svg__img {
     width: 100%;
@@ -398,7 +471,7 @@ img {
     padding: 6rem 0 2rem;
   }
   .nav {
-    height: 4.5rem;
+    height: calc(var(--header-height) + 1.5rem);
   }
   .nav__list {
     flex-direction: row;
@@ -417,6 +490,7 @@ img {
     justify-content: initial;
   }
 }
+/* For large devices */
 @media screen and (min-width: 968px) {
   .button__header {
     display: block;

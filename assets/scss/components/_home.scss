@@ -3,11 +3,11 @@
         row-gap: 3rem;
     }
     &__title{
-        font-size: $biggest-font-size;
-        font-weight: $font-bold;
-        margin-bottom: $mb-0-75;
+        font-size: var(--biggest-font-size);
+        font-weight: var(--font-bold);
+        margin-bottom: var(--mb-0-75);
     }
     &__description{
-        margin-bottom: $mb-2;
+        margin-bottom: var(--mb-2);
     }
 }

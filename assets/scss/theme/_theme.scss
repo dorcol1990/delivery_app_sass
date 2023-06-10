@@ -1,23 +1,26 @@
 
 
 //===============================//
-.change-theme{
+body.dark-theme{
+    --first-color-light: hsl(var(--hue), var(--sat), 75%);
+    --title-color: hsl(var(--hue), 4%, 95%);
+    --text-color: hsl(var(--hue), 4%, 80%);
+    --body-color: hsl(var(--hue), 8%, 13%);
+    --container-color: hsl(var(--hue), 8%, 16%);
+    --scroll-bar-color: hsl(var(--hue), 4%, 32%);
+    --scroll-thumb-color: hsl(var(--hue), 4%, 24%);
+}
+
+/*========== Button Dark/Light ==========*/
+.change-theme {
     position: absolute;
     right: 1.5rem;
     top: 2.2rem;
-    color: $title-color;
+    color: var(--title-color);
     font-size: 1.8rem;
     cursor: pointer;
 }
-body.dark-theme{
-    $first-color-light: hsl($hue, $sat, 75%);
-    $title-color: hsl($hue, 4%, 95%);
-    $text-color: hsl($hue, 4%, 80%);
-    $body-color: hsl($hue, 8%, 13%);
-    $container-color: hsl($hue, 8%, 16%);
-    $scroll-bar-color: hsl($hue, 4%, 32%);
-    $scroll-thumb-color: hsl($hue, 4%, 24%);
-}
+
 .dark-theme .footer{
-    background-color: $container-color;
+    background-color: var(--container-color);
 }

@@ -2,7 +2,7 @@
 
 .contact{
     &__container{
-        margin-bottom: 3rem;
+        padding-bottom: 3rem;
     }
     &__description{
         text-align: center;
@@ -11,12 +11,12 @@
         row-gap: .75rem;
     }
     &__address{
-        font-size: $small-font-size;
-        font-weight: $font-semi-bold;
-        color: $title-color;
+        font-size: var(--small-font-size);
+        font-weight: var(--font-semi-bold);
+        color: var(--title-color);
     }
     &__information{
         font-weight: initial;
-        color: $text-color;
+        color: var(--text-color);
     }
 }
